@@ -29,6 +29,9 @@ public class Main {
         //Сравнение сотвествий начал строк
         out.println("Равенство начал " +strangeStr("pirozhok", "pir"));
 
+        //Домашка
+        out.println("HellO mY Friend!"  + " -> " + revertStr("HellO mY Friend!"));
+
     }
     static boolean compareStr(String str, String str2){
         if (str.equals(str2)) return true;
@@ -65,6 +68,15 @@ public class Main {
         int lenStr2 = str2.length() -1;
         if (str.substring(0, lenStr2).equals(str2.substring(0, lenStr2))) return true;
         return false;
+    }
+    public static String revertStr(String str){
+        StringBuilder stringBuilder = new StringBuilder("");
+        for (char c : str.toCharArray()){
+            String t = c + "";
+            if (!t.equals(t.toLowerCase())) stringBuilder.append(t.toLowerCase());
+            else stringBuilder.append(t.toUpperCase());
+        }
+        return stringBuilder.toString();
     }
 
 }
